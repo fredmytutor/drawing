@@ -1,0 +1,15 @@
+<h2>sketches</h2>
+<div class="sketches-list">
+  {{# unless sketches}}
+  <div class="sketch-link-container">
+    none yet!
+  </div>
+  {{/unless}}
+  {{# sketches}}
+  <div class="sketch-link-container">
+    <a href="/sketches/{{slug}}/index.html" target="_blank">
+      {{name}}
+    </a>
+  </div>
+  {{/ sketches}}
+</div>

@@ -2,21 +2,20 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const mustacheExpress = require('mustache-express');
+const exphbs  = require('express-handlebars');
 
 const app = express();
 
 app.use(express.static('public'));
 
-app.engine('html', mustacheExpress());
-
-app.set('view engine', 'mustache');
-app.set('views', __dirname + '/views');
+app.engine('html', exphbs({ extname: '.html' }));
+app.set('view engine', 'handlebars');
 
 const displayCase = (elem) => elem.replace(/_/g, ' ');
 
 app.get('/', (req, res) => {
   fs.readdir(__dirname + '/public/sketches', (err, filesPath) => {
-    res.render('index.html', {
+    res.render('home.html', {
       sketches: filesPath.map(path => (
         {
           slug: path,
