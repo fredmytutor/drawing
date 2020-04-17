@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+  <title>Things</title>
+</head>
+<body>
+  <div class="container">
+    <h1>p5layground<h1>
+    <h2>sketches</h2>
+    <div class="sketches-list">
+      {{# sketches}}
+      <div class="sketch-link-container">
+        <a href="/sketches/{{slug}}/index.html" target="_blank">
+          {{name}}
+        </a>
+      </div>
+      {{/ sketches}}
+    </div>
+  </div>
+</body>
+</html>
