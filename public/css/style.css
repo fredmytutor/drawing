@@ -50,21 +50,21 @@ body {
 
 h1 {
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 h2 {
   font-size: 1.2rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .container {
-  padding: 1rem 2rem;
+  padding: 2rem 3rem;
 }
 
 .sketch-link-container + .sketch-link-container {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
 }
 
 .sketches-list a {
@@ -79,5 +79,13 @@ h2 {
 }
 
 .sketches-list a + a {
-  margin-top: 0.2rem;
+  margin-top: 0.5rem;
+}
+
+#sketch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.5;
 }
