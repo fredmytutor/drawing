@@ -1,19 +1,25 @@
 const fs = require('fs');
 
+const configPath = './config.json';
+const loadConfig = () => JSON.parse(fs.readFileSync(configPath, 'utf8'));
+
 const schemaManager = {
   addSketch: function(sketchName, slug) {
-    let content = JSON.parse(fs.readFileSync('./config.json', 'utf8'));
     const sketch = {
       slug,
       name: sketchName,
     }
+
+    let content = loadConfig();
     content.sketches.push(sketch);
-    fs.writeFileSync('./config.json', JSON.stringify(content, null, 2));
+
+    fs.writeFileSync(configPath, JSON.stringify(content, null, 2));
+
+    return content;
   },
 
   getSketches: function() {
-    let content = JSON.parse(fs.readFileSync('./config.json', 'utf8'));
-    return content.sketches;
+    return loadConfig().sketches;
   }
 };
 
