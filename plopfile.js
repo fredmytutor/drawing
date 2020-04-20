@@ -17,14 +17,11 @@ module.exports = (plop) => {
     }],
     actions: [
       {
-        type: 'add',
-        path: 'public/sketches/{{snakeCase name}}/index.html',
-        templateFile: 'templates/index.html',
-      },
-      {
-        type: 'add',
-        path: 'public/sketches/{{snakeCase name}}/sketch.js',
-        templateFile: 'templates/sketch.js',
+        type: 'addMany',
+        abortOnFail: true,
+        templateFiles: 'templates/**',
+        base: 'templates',
+        destination: 'public/sketches/{{snakeCase name}}/',
       },
       {
         type: 'addSketchToSchema',

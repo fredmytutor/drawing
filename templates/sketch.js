@@ -1,10 +1,10 @@
 const sketch = (s) => {
   s.setup = () => {
+    s.background('fff');
     s.createCanvas(s.windowWidth, s.windowHeight);
   };
 
   s.draw = () => {
-    s.background('fff');
   };
 };
 
