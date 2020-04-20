@@ -9,6 +9,11 @@ const schemaManager = {
     }
     content.sketches.push(sketch);
     fs.writeFileSync('./config.json', JSON.stringify(content, null, 2));
+  },
+
+  getSketches: function() {
+    let content = JSON.parse(fs.readFileSync('./config.json', 'utf8'));
+    return content.sketches;
   }
 };
 
