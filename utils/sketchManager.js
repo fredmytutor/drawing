@@ -1,5 +1,5 @@
 const { mkdir, write, load } = require('./fileManager.js');
-const { addSketch } = require('./schemaManager.js');
+const { addSketch, removeSketch } = require('./schemaManager.js');
 const path = require('path');
 
 const templates = [
@@ -32,11 +32,17 @@ const manager = {
       .then(() => (
         addSketch(name, slug)
       ))
-      .then(() => console.log('Finished'))
+      .then(console.log('Finished'))
       .catch(err => {
         console.log(err);
       });
   },
+
+  deleteSketch: (name) => {
+    const slug = generateSlug(name);
+    removeSketch(slug)
+      .then(console.log('Done'));
+  }
 };
 
 module.exports = manager;

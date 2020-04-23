@@ -26,7 +26,7 @@ const manager = {
         resolve(data);
       });
     });
-  }
+  },
 };
 
 module.exports = manager;
