@@ -3,8 +3,12 @@ const fs = require('fs');
 const configPath = './config.json';
 const loadConfig = () => JSON.parse(fs.readFileSync(configPath, 'utf8'));
 
+const writeConfig = content => {
+  fs.writeFileSync(configPath, JSON.stringify(content, null, 2));
+}
+
 const schemaManager = {
-  addSketch: function(sketchName, slug) {
+  addSketch: (sketchName, slug) => {
     const sketch = {
       slug,
       name: sketchName,
@@ -18,7 +22,7 @@ const schemaManager = {
     return content;
   },
 
-  getSketches: function() {
+  getSketches: () => {
     return loadConfig().sketches;
   }
 };
