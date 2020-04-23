@@ -11,19 +11,21 @@ const generateSlug = (name) => (
   name.replace(/\s+/g, '_').toLowerCase()
 );
 
-const generator = {
-  createSketch: (name) => {
+const manager = {
+  createSketch: async (name) => {
     const slug = generateSlug(name);
     const sketchPath = `public/sketches/${slug}`;
 
+    const loadedTemplates = await Promise.all(
+      templates.map(async (template) => {
+        const data = await load(template);
+        return [path.basename(template), data]
+      })
+    )
+
     mkdir(sketchPath)
-      .then(() => (
-        Promise.all(templates.map(template => (
-          load(template)
-        )))
-      ))
       .then(files => (
-        Promise.all(files.map(([fileName, content]) => (
+        Promise.all(loadedTemplates.map(([fileName, content]) => (
           write(path.resolve(sketchPath, fileName), content)
         )))
       ))
@@ -34,7 +36,7 @@ const generator = {
       .catch(err => {
         console.log(err);
       });
-  }
+  },
 };
 
-module.exports = generator;
+module.exports = manager;

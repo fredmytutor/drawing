@@ -1,5 +1,4 @@
 const fs = require('fs');
-const p = require('path')
 
 const manager = {
   write: (path, content) => {
@@ -24,7 +23,7 @@ const manager = {
     return new Promise((resolve, reject) => {
       fs.readFile(path, (err, data) => {
         if (err) reject(err);
-        resolve([p.basename(path), data]);
+        resolve(data);
       });
     });
   }
