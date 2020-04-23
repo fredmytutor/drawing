@@ -8,7 +8,7 @@
     "plop": "plop"
   },
   "bin": {
-    "draw": "./bin/index.js"
+    "art": "./bin/index.js"
   },
   "dependencies": {
     "commander": "^5.0.0",
