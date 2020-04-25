@@ -19,6 +19,10 @@
     {
       "slug": "pen_tool",
       "name": "pen tool"
+    },
+    {
+      "slug": "fred",
+      "name": "fred"
     }
   ]
 }
