@@ -1,11 +1,7 @@
-const sketch = (s) => {
-  s.setup = () => {
-    s.createCanvas(s.windowWidth, s.windowHeight);
-  };
+function setup() {
+  createCanvas(400, 400);
+}
 
-  s.draw = () => {
-    s.background('fff');
-  };
-};
-
-const myp5 = new p5(sketch, 'sketch');
+function draw() {
+  background(220);
+}
