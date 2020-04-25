@@ -11,6 +11,10 @@
     {
       "slug": "triangle_tesselation_animated",
       "name": "triangle tesselation animated"
+    },
+    {
+      "slug": "diamonds",
+      "name": "diamonds"
     }
   ]
 }
