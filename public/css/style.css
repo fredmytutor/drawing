@@ -82,7 +82,7 @@ h2 {
   margin-top: 0.5rem;
 }
 
-#sketch {
+canvas {
   position: absolute;
   top: 0;
   left: 0;

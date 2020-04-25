@@ -1,20 +1,24 @@
 {
   "sketches": [
     {
-      "slug": "messing",
-      "name": "messing"
+      "slug": "bouncing_ball",
+      "name": "bouncing ball"
     },
     {
-      "slug": "triangle_tesselation",
-      "name": "triangle tesselation"
+      "slug": "flower",
+      "name": "flower"
     },
     {
-      "slug": "triangle_tesselation_animated",
-      "name": "triangle tesselation animated"
+      "slug": "get_started",
+      "name": "get started"
     },
     {
-      "slug": "diamonds",
-      "name": "diamonds"
+      "slug": "light_switch",
+      "name": "light switch"
+    },
+    {
+      "slug": "pen_tool",
+      "name": "pen tool"
     }
   ]
 }
