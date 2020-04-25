@@ -11,7 +11,6 @@ const sketch = (s) => {
 
   s.setup = () => {
     s.createCanvas(width, height);
-    s.background('#fff');
     s.stroke('#020202');
     s.textSize(10);
     s.strokeWeight(1);

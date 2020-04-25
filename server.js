@@ -1,8 +1,6 @@
 const express = require('express');
-const path = require('path');
-const fs = require('fs');
-const mustacheExpress = require('mustache-express');
 const exphbs  = require('express-handlebars');
+const { getSketches } = require('./utils/schemaManager');
 
 const app = express();
 
@@ -11,19 +9,10 @@ app.use(express.static('public'));
 app.engine('html', exphbs({ extname: '.html' }));
 app.set('view engine', 'handlebars');
 
-const displayCase = (elem) => elem.replace(/_/g, ' ');
-
 app.get('/', (req, res) => {
-  fs.readdir(__dirname + '/public/sketches', (err, filesPath) => {
-    res.render('home.html', {
-      sketches: filesPath.map(path => (
-        {
-          slug: path,
-          name: displayCase(path),
-        }
-      )) 
-    });
-  })
+  res.render('home.html', {
+    sketches: getSketches(),
+  });
 });
 
 const PORT = 5000;
