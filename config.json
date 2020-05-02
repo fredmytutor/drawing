@@ -3,26 +3,6 @@
     {
       "slug": "bouncing_ball",
       "name": "bouncing ball"
-    },
-    {
-      "slug": "flower",
-      "name": "flower"
-    },
-    {
-      "slug": "get_started",
-      "name": "get started"
-    },
-    {
-      "slug": "light_switch",
-      "name": "light switch"
-    },
-    {
-      "slug": "pen_tool",
-      "name": "pen tool"
-    },
-    {
-      "slug": "fred",
-      "name": "fred"
     }
   ]
 }

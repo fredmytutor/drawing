@@ -1,6 +1,12 @@
 let balls = [];
 // let ball1;
 
+function preload() {
+  
+}
+
+
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
 }
@@ -18,7 +24,7 @@ function draw() {
       }
     }
     if (overlapping) {
-      balls[i].setColour(0,0,0)
+      balls[i].bounceOff()
     }
 
   }
@@ -29,12 +35,6 @@ function mousePressed() {
   let ballClicked = false;
   for (let i = balls.length - 1; i >= 0; i--) {
     if (balls[i].clicked(mouseX, mouseY)) {
-      // delete ball and create 2 new balls
-
-      ballClicked = true;
-      for (let x = 0; x < 5; x++) {
-        balls.push(new Ball(balls[i].currentLocationX(), balls[i].currentLocationY(), random(-2, 2), random(-2, 2), random(20, 40), 250))
-      }
       balls.splice(i, 1)
     }
   }
@@ -91,6 +91,12 @@ class Ball {
       this.colour = [random(0, 250), random(0, 250), random(0, 250)]
     }
   }
+  bounceOff() {
+    this.speedx = - this.speedx;
+    this.speedy = -this.speedy
+    this.colour = [random(0, 250), random(0, 250), random(0, 250)]
+  }
+
   clicked(x, y) {
     if (dist(this.locx, this.locy, x, y) < this.size) {
       return true
