@@ -1,8 +1,16 @@
 {
   "sketches": [
     {
-      "slug": "bouncing_ball",
-      "name": "bouncing ball"
+      "slug": "bouncing_will",
+      "name": "bouncing will"
+    },
+    {
+      "slug": "snake",
+      "name": "snake"
+    },
+    {
+      "slug": "clock",
+      "name": "clock"
     }
   ]
 }

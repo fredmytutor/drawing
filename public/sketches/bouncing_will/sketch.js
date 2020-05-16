@@ -1,14 +1,16 @@
 let balls = [];
-// let ball1;
+let will;
 
 function preload() {
-  
+  will = loadImage('images/Will_circle.png');
 }
 
 
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  for(let i = 0; i<5; i++)
+  balls.push(new Ball(random(55,windowWidth-55), random(55,windowHeight-55), random(-2, 2), random(-2, 2), random(50, 100), [random(0, 250), random(0, 250), random(0, 250)]))
 }
 
 function draw() {
@@ -68,9 +70,9 @@ class Ball {
   setColour(rgb) {
     this.colour = rgb;
   }
-  show() {
-    fill(this.colour)
-    ellipse(this.locx, this.locy, this.size, this.size);
+  show() {  
+    // fill(this.colour)
+    image(will,this.locx,this.locy,this.size,this.size)
   }
   move() {
     this.speedx, this.speedy
