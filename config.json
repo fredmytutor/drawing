@@ -11,6 +11,10 @@
     {
       "slug": "clock",
       "name": "clock"
+    },
+    {
+      "slug": "home",
+      "name": "home"
     }
   ]
 }

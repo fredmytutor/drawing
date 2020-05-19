@@ -1,17 +1,17 @@
 let snake;
 let food;
-let speed = 2
+let speed = 3.5;
 let superSpeed = 5;
 let faces = [];
-let snakeSize = 30;
-let foodSize = 30;
+let snakeSize = 50;
+let foodSize = 50;
 let v = true;
 
 function preload() {
-  faces.push(loadImage('images/jamesg.png'))
-  faces.push(loadImage('images/nicola.png'))
-  faces.push(loadImage('images/bertie.png'))
-  faces.push(loadImage('images/manisha.png'))
+  faces.push(loadImage('images/JB.png'))
+  faces.push(loadImage('images/balloons.png'))
+  faces.push(loadImage('images/cake.png'))
+  faces.push(loadImage('images/present.png'))
   
 }
 
@@ -30,7 +30,7 @@ function draw() {
   snake.eat()
 }
 
-function keyPressed() { 
+function keyPressed() {
   if (keyCode === LEFT_ARROW) {
     snake.setVelocity(-speed, 0)
   } else if (keyCode === RIGHT_ARROW) {
@@ -44,6 +44,7 @@ function keyPressed() {
 
 class Snake {
   constructor(locx, locy, speedx, speedy, size) {
+    
     this.locx = locx;
     this.locy = locy;
     this.speedx = speedx;
@@ -71,7 +72,7 @@ class Snake {
   move() {
     this.bodyparts[0].setLocation(this.locx, this.locy)
     for (let i = 1; i < this.bodyparts.length; i++) {
-      this.bodyparts[i].setLocation(this.history[20 * i].x, this.history[20 * i].y)
+      this.bodyparts[i].setLocation(this.history[15 * i].x, this.history[15 * i].y)
     }
     this.locx += this.speedx
     this.locy += this.speedy
@@ -86,9 +87,8 @@ class Snake {
   eat() {
     if (dist(this.bodyparts[0].locx, this.bodyparts[0].locy, food.locx, food.locy) < (this.size / 2 + food.size / 2)) {
       snake.grow()
-      food.setLocation(random(0, windowWidth), random(0, windowHeight))
-      print(int(random(0,4)))
-      food.setFace(int(random(0,4)))
+      food.setLocation(random(10, windowWidth-10), random(10, windowHeight-10))
+      food.setFace(int(random(1,4)))
     }
   }
   crash() {

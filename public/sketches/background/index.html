@@ -1,9 +1,15 @@
-<html>
-  <head>
-    <script src="../../libraries/p5.min.js"></script>
-    <!-- <link href="/css/style.css" rel="stylesheet" type="text/css"> -->
-    <script src="sketch.js"></script>
-  </head>
-  <body>
-  </body>
-</html>
+<h2>sketches</h2>
+<div class="sketches-list">
+  <p>hello</p>
+  <div class="sketch-link-container">
+    none yet!
+  </div>
+  {{/unless}}
+  {{# sketches}}
+  <div class="sketch-link-container">
+    <a href="/sketches/{{slug}}/index.html" target="_blank">
+      {{name}}
+    </a>
+  </div>
+  {{/ sketches}}
+</div>
